@@ -35,67 +35,70 @@
   </ion-row>
 
   <!-- Conteudo - Desenvolvimento de Sistemas-->
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="4">
-
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/16070575/pexels-photo-16070575.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-        <ion-card-header>
-          <ion-card-title>Programação Mobile II</ion-card-title>
-          <ion-card-subtitle>Ionic & Bootstrap</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card>
-
-    </ion-col>
-
-
-    <ion-col size="4">
-
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/10297667/pexels-photo-10297667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-        <ion-card-header>
-          <ion-card-title>Programação Mobile II</ion-card-title>
-          <ion-card-subtitle>HTML & CSS</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card>
-
-
-    </ion-col>
-
-
-    <ion-col size="4">
-
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/10905331/pexels-photo-10905331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-        <ion-card-header>
-          <ion-card-title>Programação Mobile II</ion-card-title>
-          <ion-card-subtitle>Síncrona & Assíncrona</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card>
-
-    </ion-col>
-  </ion-row>
+  <ng-container *ngIf="this.item_selecionado == 'desenvolvimentos_sistemas' "> <!-- ng container não vai aparecer, mas serve para criar estruturas condicionais -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="4">
+  
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/16070575/pexels-photo-16070575.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <ion-card-header>
+            <ion-card-title>Programação Mobile II</ion-card-title>
+            <ion-card-subtitle>Ionic & Bootstrap</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+  
+      </ion-col>
+  
+  
+      <ion-col size="4">
+  
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/10297667/pexels-photo-10297667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <ion-card-header>
+            <ion-card-title>Programação Mobile II</ion-card-title>
+            <ion-card-subtitle>HTML & CSS</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+  
+  
+      </ion-col>
+  
+  
+      <ion-col size="4">
+  
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/10905331/pexels-photo-10905331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <ion-card-header>
+            <ion-card-title>Programação Mobile II</ion-card-title>
+            <ion-card-subtitle>Síncrona & Assíncrona</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+  
+      </ion-col>
+    </ion-row>
+  </ng-container>
 
   <!-- Conteudo - Informática para Internet -->
+  <ng-container *ngIf="this.item_selecionado == 'informatica_internet' ">
   <ion-row class="ion-justify-content-center">
     <ion-col size="4">
 
       <ion-card>
         <img alt="Silhouette of mountains" src="https://images.pexels.com/photos/16070575/pexels-photo-16070575.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
         <ion-card-header>
-          <ion-card-title>Programação Mobile II</ion-card-title>
+          <ion-card-title>PW</ion-card-title>
           <ion-card-subtitle>Ionic & Bootstrap</ion-card-subtitle>
         </ion-card-header>
       
@@ -141,8 +144,10 @@
 
     </ion-col>
   </ion-row>
+</ng-container>
 
   <!-- Conteudo - Quimíca -->
+  <ng-container *ngIf="this.item_selecionado == 'quimica' ">
   <ion-row class="ion-justify-content-center">
     <ion-col size="4">
 
@@ -195,6 +200,8 @@
 
     </ion-col>
   </ion-row>
+</ng-container>
+
 
   
 </ion-content>
