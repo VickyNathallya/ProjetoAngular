@@ -1,22 +1,86 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
+<ion-content [fullscreen]="true" color="dark">
+  <!-- Display -->
+  <div class="display">
+      <ion-input type="number" [(ngModel)]="display" class="ion-text-end">12</ion-input>
   </div>
+  <!-- Botôes -->
+      <!-- Primeira linha -->
+      <ion-row>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="success" (click)="click('ac')">AC</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="click('()')">( )</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="click('%')">%</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="click('/')">/</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- Segunda linha -->
+      <ion-row>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('7')">7</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('8')">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('9')">9</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="click('X')">X</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- Terceira linha -->
+      <ion-row>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('4')">4</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('5')">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('6')">6</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="click('-')">-</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- Quarta linha -->
+      <ion-row>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('1')">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('2')">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('3')">3</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="click('+')">+</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- Quinta linha -->
+      <ion-row>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('0')">0</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click(',')">,</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="light" (click)="click('⌫')">⌫</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botao" shape="round" color="warning" (click)="click('=')">=</ion-button>
+        </ion-col>
+      </ion-row>
 </ion-content>
