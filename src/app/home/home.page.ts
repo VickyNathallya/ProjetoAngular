@@ -14,25 +14,29 @@ export class HomePage {
   // Variável para armazenar o valor exibido no display
   displayValue = '';
   // Array com os botões da calculadora
-  buttons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', 'X', '/', '⌫', '=', '%', '( )', 'ac'];
+  buttons = ['ac', '()', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', ',', '⌫'];
 
   buttonClick(button: string) {
     // Concatena o valor do botão ao valor exibido no display
-    this.displayValue += button;
+    document.getElementById('displayValue')!.innerHTML += button;
   }
 
   clearDisplay() {
     // Limpa o valor exibido no display
-    this.displayValue = '';
+    document.getElementById('displayValue')!.innerHTML = "";
+  }
+  back() {
+    const element = document.getElementById('displayValue');
+    if (element) {
+      const res = element.textContent!;
+      element.textContent = res.slice(0, -1);
+    }
   }
 
   calculateResult() {
-    try {
-      // Calcula o resultado da expressão e atualiza o valor exibido no display
-      this.displayValue = eval(this.displayValue);
-    } catch (error) {
-      // Em caso de erro na expressão, exibe "Error" no display
-      this.displayValue = 'Error';
+    let res = document.getElementById('displayValue')!.innerHTML;
+    if (res) {
+      document.getElementById('displayValue')!.innerHTML = eval(res);
     }
   }
 }

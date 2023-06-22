@@ -1,8 +1,13 @@
+.display {
+  background-color: #000000;
+  padding: 40px 15px 10px;
+}
 ion-input {
-  text-align: right;
-  font-size: 24px;
-  font-weight: bold;
-  border: none;
-  --padding-start: 10px;
-  --padding-end: 10px;
+  color: #ffffff;
+  font-size: 48px;
+} 
+ion-col {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
