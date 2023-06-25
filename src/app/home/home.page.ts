@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
@@ -6,37 +7,48 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule]
+  imports: [IonicModule],
 })
 
 export class HomePage {
-  
-  // Variável para armazenar o valor exibido no display
-  displayValue = '';
-  // Array com os botões da calculadora
-  buttons = ['ac', '()', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', ',', '⌫'];
 
-  buttonClick(button: string) {
-    // Concatena o valor do botão ao valor exibido no display
-    document.getElementById('displayValue')!.innerHTML += button;
-  }
+    resultado: number = 0; 
 
-  clearDisplay() {
-    // Limpa o valor exibido no display
-    document.getElementById('displayValue')!.innerHTML = "";
-  }
-  back() {
-    const element = document.getElementById('displayValue');
-    if (element) {
-      const res = element.textContent!;
-      element.textContent = res.slice(0, -1);
-    }
-  }
+    buttonClick(numero: number)
+    { 
+      if(this.resultado == 0){
+        document.getElementById('resultado')!.innerHTML = "";
+      }
+      let res = document.getElementById('resultado')!.innerHTML;       
+      document.getElementById('resultado')!.innerHTML += numero;
+     this.resultado = numero * 1;
+     } 
 
-  calculateResult() {
-    let res = document.getElementById('displayValue')!.innerHTML;
-    if (res) {
-      document.getElementById('displayValue')!.innerHTML = eval(res);
-    }
+     buttonClickOP(op: string){ 
+      if(this.resultado == 0){
+        document.getElementById('resultado')!.innerHTML = "";
+      }
+      let res = document.getElementById('resultado')!.innerHTML; 
+      document.getElementById('resultado')!.innerHTML += op; 
+    } 
+
+    clear(){ 
+      document.getElementById('resultado')!.innerHTML = "";
+   } 
+
+    back(): void {
+       let res = document.getElementById('resultado')!.innerHTML;
+        document.getElementById('resultado')!.innerHTML = res.substring(0, res.length - 1); 
+      } 
+      calcular() {
+        let res = document.getElementById('resultado')!.innerHTML;
+        if (res) {
+          let result = eval(res);
+          if (typeof result === 'number') {
+            this.resultado = result;
+            document.getElementById('resultado')!.innerHTML = result.toString();
+          }
+        }
+      }
+      
   }
-}

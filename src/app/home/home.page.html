@@ -1,89 +1,92 @@
 <ion-content [fullscreen]="true" color="dark">
 
   <!-- Display -->
-  <div class="display">
-      <ion-input type="number" ([ngModel])="displayValue" class="ion-text-end" id="displayValue"></ion-input>
-  </div>
-
+  <!-- criei um label em vez de input para exibir o resultado  -->
+  <ion-label id="resultado"></ion-label>
   <!-- Botôes -->
-
+<!-- mudei os mumeros para number -->
+<!-- criei uma funcao separada para pegar as operações -->
       <!-- Primeira linha -->
       <ion-row>
         <ion-col>
-          <ion-button class="botao" shape="round" color="success" (click)="buttonClick('ac')">AC</ion-button>
+          <!-- criei uma função para limprar tudo -->
+          <ion-button class="botao" shape="round" color="success" (click)="clear()">AC</ion-button>
+        </ion-col>
+        <!-- deixei em comentario os parentesses porcausa que teria que criart uma function sozinha para elas -->
+        <!-- <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('()')">( )</ion-button>
+        </ion-col> -->
+        <ion-col>
+          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('%')">%</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClick('()')">( )</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClick('%')">%</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClick('/')">/</ion-button>
+          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('/')">/</ion-button>
         </ion-col>
       </ion-row>
 
       <!-- Segunda linha -->
       <ion-row>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('7')">7</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(7)">7</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('8')">8</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(8)">8</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('9')">9</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(9)">9</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClick('*')">*</ion-button>
+          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('*')">*</ion-button>
         </ion-col>
       </ion-row>
 
       <!-- Terceira linha -->
       <ion-row>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('4')">4</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(4)">4</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('5')">5</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(5)">5</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('6')">6</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(6)">6</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClick('-')">-</ion-button>
+          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('-')">-</ion-button>
         </ion-col>
       </ion-row>
 
       <!-- Quarta linha -->
       <ion-row>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('1')">1</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(1)">1</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('2')">2</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(2)">2</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('3')">3</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(3)">3</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClick('+')">+</ion-button>
+          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('+')">+</ion-button>
         </ion-col>
       </ion-row>
 
       <!-- Quinta linha -->
       <ion-row>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('0')">0</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(0)">0</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick(',')">,</ion-button>
+          <ion-button class="botao" shape="round" color="light" (click)="buttonClickOP(',')">,</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="light" (click)="buttonClick('⌫')">⌫</ion-button>
+          <!-- criei uma funcao para apagar -->
+          <ion-button class="botao" shape="round" color="light" (click)="back()">⌫</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button class="botao" shape="round" color="warning" (click)="buttonClick('=')" id="res">=</ion-button>
+          <!-- criei uma funcao para calcular tudo -->
+          <ion-button class="botao" shape="round" color="warning" (click)="calcular()" id="res">=</ion-button>
         </ion-col>
       </ion-row>
       
