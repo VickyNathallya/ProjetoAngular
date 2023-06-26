@@ -8,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule],
 })
-
+// ver no modo mobile em 'inspecionar'
 export class HomePage {
 
     resultado: number = 0; 
