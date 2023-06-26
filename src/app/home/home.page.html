@@ -1,21 +1,15 @@
 <ion-content [fullscreen]="true" color="dark">
 
   <!-- Display -->
-  <!-- criei um label em vez de input para exibir o resultado  -->
   <ion-label id="resultado"></ion-label>
+
   <!-- Botôes -->
-<!-- mudei os mumeros para number -->
-<!-- criei uma funcao separada para pegar as operações -->
+
       <!-- Primeira linha -->
       <ion-row>
         <ion-col>
-          <!-- criei uma função para limprar tudo -->
-          <ion-button class="botao" shape="round" color="success" (click)="clear()">AC</ion-button>
+          <ion-button class="botao" shape="round" color="success" (click)="clear()">C</ion-button>
         </ion-col>
-        <!-- deixei em comentario os parentesses porcausa que teria que criart uma function sozinha para elas -->
-        <!-- <ion-col>
-          <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('()')">( )</ion-button>
-        </ion-col> -->
         <ion-col>
           <ion-button class="botao" shape="round" color="secondary" (click)="buttonClickOP('%')">%</ion-button>
         </ion-col>
